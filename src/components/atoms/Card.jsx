@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
+import { forwardRef } from "react";
 
-const Card = ({ to, className, children }) => {
+const Card = forwardRef(({ onClick, className, children }, ref) => {
     return (
-        <Link
-            to={to}
-            className={`flex flex-col font-poppins justify-top gap-0.5 shadow-md pt-2 pb-3 pl-3.5 pr-3.5 transition-all ease-out justify-between delay-75 duration-200 relative hover:shadow-lg ${className}`}
+        <div
+            ref={ref}
+            onClick={onClick}
+            className={`flex flex-col font-poppins relative justify-top gap-0.5 shadow-md pt-2 pb-3 pl-3.5 pr-3.5 transition-all ease-out justify-between delay-75 duration-200 relative hover:shadow-lg ${className}`}
         >
             {children}
-        </Link>
+        </div>
     );
-};
+});
 
 export default Card;
