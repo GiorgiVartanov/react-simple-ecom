@@ -20,7 +20,7 @@ const Product = () => {
     if (isLoading) return <p>Loading...</p>;
 
     return (
-        <main className="flex flex-col md:flex-row max-w-5xl m-auto gap-8 pl-4 pr-4 mt-20 font-poppins">
+        <main className="flex flex-col md:flex-row max-w-5xl m-auto gap-8 pl-4 pr-4 mt-20 mb-20 font-poppins">
             <img
                 className="max-w-lg h-full w-full m-auto md:m-0"
                 src={data.image}

@@ -5,6 +5,9 @@ import Home from "./pages/Home.page";
 import Product from "./pages/Product.page";
 import Products from "./pages/Products.page";
 import Cart from "./pages/Cart.page";
+import Register from "./pages/Register.page";
+import Login from "./pages/Login.page";
+import Footer from "./components/molecules/Footer";
 
 import { Routes, Route } from "react-router-dom";
 import { Link, NavLink } from "react-router-dom";
@@ -19,7 +22,7 @@ const App = () => {
     );
 
     return (
-        <>
+        <div className="flex flex-col h-screen">
             {!isLoading ? <Header categories={data} /> : ""}
             <Routes>
                 <Route
@@ -38,8 +41,17 @@ const App = () => {
                     path="/cart"
                     element={<Cart />}
                 />
+                <Route
+                    path="/register"
+                    element={<Register />}
+                />
+                <Route
+                    path="/login"
+                    element={<Login />}
+                />
             </Routes>
-        </>
+            <Footer />
+        </div>
     );
 };
 

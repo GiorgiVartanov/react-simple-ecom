@@ -1,8 +1,14 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
         fontFamily: {
             poppins: ["poppins", "Arial", "sans-serif"],
+        },
+        screens: {
+            xs: "500px",
+            ...defaultTheme.screens,
         },
         extend: {
             keyframes: {

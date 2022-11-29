@@ -6,7 +6,7 @@ const Products = () => {
     const { category } = useParams();
 
     return (
-        <main className="mt-20">
+        <main className="mt-20 mb-20">
             <ProductList
                 name={category}
                 get={`${

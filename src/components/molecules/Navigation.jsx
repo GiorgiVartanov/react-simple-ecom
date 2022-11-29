@@ -46,7 +46,7 @@ const Navigation = ({ children }) => {
                 </div>
             </nav>
             {isOpen ? (
-                <div className="bg-gray-500/25 absolute h-screen w-full top-12 left-0 z-20"></div>
+                <div className="bg-gray-500/25 absolute top-0 w-full h-screen top-12 left-0 z-20"></div>
             ) : (
                 ""
             )}

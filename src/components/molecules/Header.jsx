@@ -1,12 +1,13 @@
 import Dropdown from "../atoms/Dropdown";
 import Navigation from "./Navigation";
+import NavigationLink from "../atoms/NavigationLink";
 
 import { Link, NavLink } from "react-router-dom";
 
 const Header = ({ categories }) => {
     return (
         <header
-            className={`flex justify-between pt-2 pb-2 pl-5 pr-5 bg-slate-800 shadow-md w-full top-0 z-50`}
+            className={`flex justify-between pt-2 pb-2 pl-5 pr-5 bg-slate-800 shadow-md w-full top-0`}
         >
             <Link to="/">
                 <h1 className="font-poppins text-2xl text-slate-100 font-bold">
@@ -18,10 +19,10 @@ const Header = ({ categories }) => {
                 <Navigation>
                     <Dropdown name="products">
                         {categories.map((category) => (
-                            <NavLink
+                            <NavigationLink
                                 className={({ isActive }) =>
                                     [
-                                        `pl-8 pr-8 pt-2 pb-2 sm:pt-0 sm:pl-4 sm:pr-4  hover:text-slate-300 transform-all ease-out delay-75 duration-200 whitespace-nowrap w-full text-center ${
+                                        `pt-2 pb-2 sm:pt-0 sm:pl-4 sm:pr-4 whitespace-nowrap w-full text-center ${
                                             isActive
                                                 ? "text-slate-100"
                                                 : "text-slate-400"
@@ -36,37 +37,13 @@ const Header = ({ categories }) => {
                                 )}`}
                             >
                                 {category}
-                            </NavLink>
+                            </NavigationLink>
                         ))}
                     </Dropdown>
-                    <NavLink
-                        to="/"
-                        className={({ isActive }) =>
-                            [
-                                `font-poppins hover:text-slate-300 transform-all delay-75 duration-200 ease-out pb-1 pt-1 sm:pt-0 sm:pb-0  w-full text-center ${
-                                    isActive
-                                        ? "text-slate-100"
-                                        : "text-slate-400"
-                                }`,
-                            ].join(" ")
-                        }
-                    >
-                        home
-                    </NavLink>
-                    <NavLink
-                        to="/cart"
-                        className={({ isActive }) =>
-                            [
-                                `font-poppins hover:text-slate-300 transform-all delay-75 duration-200 ease-out pb-1 pt-1 sm:pt-0 sm:pb-0 w-full text-center ${
-                                    isActive
-                                        ? "text-slate-100"
-                                        : "text-slate-400"
-                                }`,
-                            ].join(" ")
-                        }
-                    >
-                        cart
-                    </NavLink>
+                    <NavigationLink to="/">home</NavigationLink>
+                    <NavigationLink to="/cart">cart</NavigationLink>
+                    <NavigationLink to="/register">register</NavigationLink>
+                    <NavigationLink to="/login">login</NavigationLink>
                 </Navigation>
             </div>
         </header>

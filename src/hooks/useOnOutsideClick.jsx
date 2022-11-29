@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export const useOnClickOutside = (ref, handler) => {
     // ref - ref of thing we need to detect outside click from
